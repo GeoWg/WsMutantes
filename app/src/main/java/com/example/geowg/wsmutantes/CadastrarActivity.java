@@ -27,7 +27,7 @@ public class CadastrarActivity extends AppCompatActivity implements Response.Lis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
-        EditText nome = findViewById(R.id.etNome);
+        EditText nome = findViewById(R.id.textonome);
         EditText habilidade = findViewById(R.id.etHabilidades);
         Intent it = getIntent();
         Bundle params = it.getExtras();
@@ -37,7 +37,7 @@ public class CadastrarActivity extends AppCompatActivity implements Response.Lis
     public void cadastrar(View view) {
         AlertDialog alerta;
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        EditText nome = findViewById(R.id.etNome);
+        EditText nome = findViewById(R.id.textonome);
         EditText habilidade = findViewById(R.id.etHabilidades);
 
         try {
@@ -48,7 +48,7 @@ public class CadastrarActivity extends AppCompatActivity implements Response.Lis
             String nomeUsuario = params.getString("nomeUsuario");
 
             if ( nome.getText().toString().equals("")|| !(habilidade.getText().toString().equals(""))) {
-                String url = "http://192.168.1.8:3000/mutantes";
+                String url = "http://192.168.100.16:3000/mutantes";
                 JSONObject jsonObject = new JSONObject();
                 jsonObject.put("nome", String.valueOf(nome.getText().toString()));
                 jsonObject.put("habilidade", String.valueOf(habilidade.getText().toString()));

@@ -25,6 +25,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:layout_marginEnd="100dp"
+        android:onClick="pesquisarMutante"
         android:text="Pesquisar" />
 
     <Button
@@ -34,6 +35,7 @@
         android:layout_below="@+id/btnPesquisar"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="100dp"
+        android:onClick="listarMutante"
         android:text="Listar" />
 
     <Button

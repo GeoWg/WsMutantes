@@ -17,7 +17,7 @@
         android:text="Nome:" />
 
     <EditText
-        android:id="@+id/etNome"
+        android:id="@+id/textonome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"

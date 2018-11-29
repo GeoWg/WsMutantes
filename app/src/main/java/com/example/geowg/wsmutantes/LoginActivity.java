@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
             jsonObject.put("password", String.valueOf(password.getText().toString()));
 
             mQueue = CustomVolleyRequestQueue.getInstance(this.getApplicationContext()).getRequestQueue();
-            String url = "http://192.168.1.8:3000/login";
+            String url = "http://192.168.100.16:3000/login";
             final CustomJSONObjectRequest jsonRequest = new CustomJSONObjectRequest(Request.Method.POST, url, jsonObject, this, this);
             jsonRequest.setTag(REQUEST_TAG);
 
@@ -72,6 +72,15 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
                 nome = ((JSONObject) response).getJSONObject("response").getString("user");
                 builder.setTitle("Login efetuado");
                 builder.setMessage("Bem vindo, " + nome);
+                builder.setPositiveButton(
+                        "Ok",
+                        new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                finish();
+                            }
+                        });
+
                 alerta = builder.create();
                 alerta.setOnDismissListener(new DialogInterface.OnDismissListener() {
                     @Override
@@ -83,6 +92,7 @@ public class LoginActivity extends AppCompatActivity implements Response.Listene
                         params.putString("nomeUsuario", nome);
                         intent.putExtras(params);
                         startActivity(intent);
+                        finish();
                     }
                 });
                 alerta.show();

@@ -26,6 +26,7 @@
         <activity android:name=".CadastrarActivity" />
         <activity android:name=".ListarActivity" />
         <activity android:name=".PesquisarActivity" />
+        <activity android:name=".PesquisarListaActivity"></activity>
     </application>
 
 </manifest>
