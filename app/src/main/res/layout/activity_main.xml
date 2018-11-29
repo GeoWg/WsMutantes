@@ -15,6 +15,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="185dp"
         android:layout_marginEnd="100dp"
+        android:onClick="cadastrarMutante"
         android:text="Cadastrar" />
 
     <Button
@@ -42,5 +43,6 @@
         android:layout_below="@+id/btnListar"
         android:layout_centerHorizontal="true"
         android:layout_marginEnd="100dp"
+        android:onClick="fecharApp"
         android:text="Sair" />
 </android.widget.RelativeLayout>
